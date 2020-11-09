@@ -18,19 +18,13 @@ pokemonList[2]={
   types: ['water', 'fighting']
 };
 
-let pokemonHeight = pokemonList[i].name + " (height: " + pokemonList[i].height + ") ";
+
 
 for (let i=0; i<pokemonList.length; i++){
-  if (pokemonList[i].height > 1.5)
-    document.write (pokemonHeight + "Wow, that's big! ");
+  let pokemonHeight = pokemonList[i].name + " (height: " + pokemonList[i].height + ") ";
+  if (pokemonList[i].height > 1.5){
+    document.write (pokemonHeight + "Wow, that's big! <br>");
   } else {
-    document.write(pokemonHeight);
+    document.write(pokemonHeight + "<br>");
   }
-
-
-// for (let i=0; i<pokemonList.length; i++)
-//   if (pokemonList[i].height > 1.5){
-//     document.write (pokemonList[i].name + " (height: " + pokemonList[i].height + ") " + "--Wow, that's big! <br>");
-//   } else {
-//     document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") <br>");
-//   }
+}
