@@ -18,13 +18,11 @@ pokemonList[2]={
   types: ['water', 'fighting']
 };
 
-
-
-for (let i=0; i<pokemonList.length; i++){
-  let pokemonHeight = pokemonList[i].name + " (height: " + pokemonList[i].height + ") ";
-  if (pokemonList[i].height > 1.5){
+pokemonList.forEach(function(pokemon) {
+  let pokemonHeight = pokemon.name + " (height: " + pokemon.height + ") ";
+  if (pokemon.height > 1.5){
     document.write (pokemonHeight + "Wow, that's big! <br>");
   } else {
     document.write(pokemonHeight + "<br>");
   }
-}
+});
