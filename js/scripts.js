@@ -22,7 +22,9 @@ let pokemonRepository = ( () => {
   }
 
   function add(pokemon){
-    pokemonList.push(pokemon);
+    if (typeof pokemon === 'object' && Object.keys === ['name', 'height', 'types']) {
+      pokemonList.push(pokemon);
+    }
   }
 
   return {
