@@ -1,4 +1,4 @@
-let pokemonRepository = ( () => {
+let pokemonRepository = (function () {
   let pokemonList = [
     {
       name: 'Bulbasaur',
@@ -24,22 +24,30 @@ let pokemonRepository = ( () => {
   function add(pokemon){
     if (typeof pokemon === 'object' && Object.keys === ['name', 'height', 'types']) {
       pokemonList.push(pokemon);
+    } else {
+      console.log("Pokemon is not correct");
     }
+  }
+
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemon-button');
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
   }
 
   return {
     getAll: getAll,
-    add: add
+    add: add,
+    addListItem: addListItem
   };
 
 })();
 
 
-pokemonRepository.getAll().forEach (pokemon => {
-  let pokemonHeight = pokemon.name + " (height: " + pokemon.height + ") ";
-  if (pokemon.height > 1.5){
-    document.write (pokemonHeight + "Wow, that's big! <br>");
-  } else {
-    document.write(pokemonHeight + "<br>");
-  }
+pokemonRepository.getAll().forEach (function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
