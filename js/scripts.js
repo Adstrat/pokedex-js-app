@@ -2,6 +2,27 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+  //fetches the promise from API,
+  function loadList() {
+    return fetch(apiUrl).then(function (response){
+      //returns parsed data
+      return response.json();
+      //callback for second promise, which gets the desired data
+    }).then(function (json) {
+      json.results.forEach(function (item){
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+        //logs all pokemon details in console
+        console.log(pokemon);
+      });
+    }).catch(function (e){
+      console.error(e);
+    })
+  }
+
   //validates pokemon, then pushes to pokemonList
   function add(pokemon){
     if (
@@ -15,11 +36,13 @@ let pokemonRepository = (function () {
     }
   }
 
+  //function to access pokemonList
   function getAll(){
     return pokemonList;
   }
 
-  //creates button with event listener (DOM manipulation) for "showDetails" function
+
+  //creates button with event listener
   function addListItem(pokemon){
     let pokemonList = document.querySelector('.pokemon-list');
     let listItem = document.createElement('li');
@@ -33,29 +56,14 @@ let pokemonRepository = (function () {
     })
   }
 
-  //fetches the promise from API, validates in "add" function, then pushes to pokemonList
-  function loadList() {
-    return fetch(apiUrl).then(function (response){
-      //returns parsed data
-      return response.json();
-      //callback for second promise, which gets the desired data
-    }).then(function (json) {
-      json.results.forEach(function (item){
-        let pokemon = {
-          name: item.name,
-          detailsUrl: item.url
-        };
-        add(pokemon);
-        //loads all pokemon details in console
-        console.log(pokemon);
-      });
-    }).catch(function (e){
-      console.error(e);
-    })
+  //logs pokemon in console
+  function showDetails(pokemon){
+    loadDetails(pokemon).then(function(){
+      console.log(pokemon);
+    });
   }
 
-  //fetches specific details of pokemon. When addListItem button is clicked
-  // it logs that pokemon in the console (via showDetails function)
+  //fetches specific details of pokemon
   function loadDetails(item){
     let url = item.detailsUrl;
     return fetch(url).then(function (response){
@@ -69,28 +77,21 @@ let pokemonRepository = (function () {
     });
   }
 
-  //logs pokemon in console when button clicked (addListItem function)
-  function showDetails(pokemon){
-    loadDetails(pokemon).then(function(){
-      console.log(pokemon);
-    });
-  }
 
   //external access to functions
   return {
-    add: add,
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails
-  };
+    };
 
 })();
 
-//calls pokemonList which is updated from loadList, in order to..
+//updates pokemonList from API
 pokemonRepository.loadList().then(function() {
-  //..request each pokemon to create button in addListItem
+  //buttons created forEach in addListItem
   pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
