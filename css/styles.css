@@ -39,7 +39,7 @@ header {
   display: none;
 }
 
-#modal-container.is-vidible {
+#modal-container.is-visible {
   position: fixed;
   padding: 20px;
   top: 0;
@@ -57,6 +57,7 @@ header {
   margin: auto;
   display: inline-block;
   background: #fff;
+  border: 4px blue solid;
   padding: 15px;
   width: 100%;
   max-width: 500px;
