@@ -60,7 +60,7 @@ header {
   border: 4px blue solid;
   padding: 15px;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   text-align: left;
 }
 
@@ -69,6 +69,15 @@ header {
   -webkit-appearance: none;
   border: 0;
   background: none;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-image {
+  display: block;
+  margin: 0 auto;
 }
 
 .modal h1 {
