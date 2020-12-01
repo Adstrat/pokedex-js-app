@@ -6,6 +6,10 @@ h1 {
   color: #191970;
 }
 
+h1:first-letter {
+  text-transform: capitalize;
+}
+
 * {
   box-sizing: border-box;
 }
