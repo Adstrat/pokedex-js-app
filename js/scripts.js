@@ -54,6 +54,17 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     })
   }
+  //   let pokemonList = $('.pokemon-list');
+  //   let listItem = $('<li></li>');
+  //   let button = $('<button class=pokemon-button></button>')
+  //   listitem.addClass('.group-list-item');
+  //   button.innerText = pokemon.name;
+  //   listItem.append(button);
+  //   pokemonList.append(listItem);
+  //   button.on('click', function(event){
+  //     showDetails(pokemon);
+  //   })
+  // }
 
   //shows pokemon details in a modal
   function showDetails(pokemon){
