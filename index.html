@@ -4,22 +4,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Simple JS App</title>
+    <title>Pokédex</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <header>
-      <img src="img/pokemon.svg" alt="Pokemon Image">
-      <h1 class=pokedex-title>Pokédex</h1>
-    </header>
-    <section>
-      <ul class="pokemon-list list-group">
-
-      </ul>
-      <div id="modal-container">
-
+    <!-- Navbar -->
+      <nav class="navbar navbar-dark fixed-top">
+        <img src="img/pokemon.svg" alt="Pokemon Image"/>
+          <h1 class=main-title>Pokédex</h1>
+        <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <ul class="pokemon-list list-group page-container">
+  <!-- Modal -->
+      <div class="modal fade"
+      id="pokemon-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="pokemonModalLabel"
+      aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"
+              id="exampleModalLabel">pokemon name</h5>
+              <button type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
