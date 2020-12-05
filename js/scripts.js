@@ -77,7 +77,7 @@ let pokemonRepository = (function () {
     imageElement.attr("src", pokemon.imageUrl);
     let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
     let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
-    let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>");
+    let typesElement = $("<p>" + "Types: " + pokemon.types.toString() + "</p>");
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
@@ -96,11 +96,7 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.other.dream_world.front_default;
       item.height = details.height;
       item.weight = details.weight;
-      item.types =
-      details.types.forEach(function(item){
-        details.types.push(item.name);
-      });
-
+      item.types = details.types.map((item) => item.type.name);
     }).catch(function (e){
       console.error(e);
     });
