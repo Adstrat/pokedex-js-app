@@ -5,6 +5,7 @@ body {
 .navbar {
   background-color: #0a508b;
   color: #fff;
+  padding: 8px 40px 8px 16px;
 }
 
 /* sets main body to start below fixed header */
