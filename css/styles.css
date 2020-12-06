@@ -15,6 +15,7 @@ body {
 
 .btn {
   background-color: #ffeaac;
+  border: 1px solid #191970;
   padding: 16px 32px;
   margin: 4px 0;
   color: #191970;
@@ -32,6 +33,10 @@ h1 {
 
 .modal-body p {
   margin: 12px 0 0;
+}
+
+span {
+  color: #aa0000;
 }
 
 @media all and (max-width: 342px){
