@@ -15,8 +15,6 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        //logs all pokemon details in console
-        console.log(pokemon);
       });
     }).catch(function (e){
       console.error(e);
@@ -59,7 +57,6 @@ let pokemonRepository = (function () {
   //shows pokemon details in a modal
   function showDetails(pokemon){
     loadDetails(pokemon).then(function(){
-      console.log(pokemon);
       showModal(pokemon);
     });
   }
