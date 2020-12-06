@@ -22,7 +22,7 @@ body {
   text-transform: capitalize;
 }
 
-h1:first-letter {
+h1 {
   text-transform: capitalize;
 }
 
@@ -32,4 +32,10 @@ h1:first-letter {
 
 .modal-body p {
   margin: 12px 0 0;
+}
+
+@media all and (max-width: 342px){
+  .page-container {
+    margin-top: 155px;
+  }
 }
