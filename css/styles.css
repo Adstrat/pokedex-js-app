@@ -39,6 +39,10 @@ span {
   color: #aa0000;
 }
 
+.github-btn {
+  text-decoration: underline;
+}
+
 @media all and (max-width: 342px){
   .page-container {
     margin-top: 155px;
