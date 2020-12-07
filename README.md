@@ -1,4 +1,4 @@
-<b>JavaScript App (Pokédex)<b>
+<b>JavaScript App (Pokédex)</b>
 
 This Application was built in HTML, CSS, JavaScript, Jquery and Bootstrap. 
 
