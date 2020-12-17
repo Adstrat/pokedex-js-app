@@ -15,16 +15,23 @@ body {
 
 .btn {
   background-color: #ffeaac;
-  border: 1px solid #191970;
-  padding: 16px 32px;
+  border: 2px solid #0a508b;
+  padding: 16px 24px;
   margin: 4px 0;
   color: #191970;
   width: 250px;
+  text-align: left;
   text-transform: capitalize;
 }
 
 h1 {
   text-transform: capitalize;
+}
+
+.pokemon-icon {
+  width: 40px;
+  height: 40px;
+  float: right;
 }
 
 .modal-body {
@@ -43,7 +50,7 @@ span {
   text-decoration: underline;
 }
 
-@media all and (max-width: 342px){
+@media all and (max-width: 342px) {
   .page-container {
     margin-top: 155px;
   }

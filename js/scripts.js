@@ -48,16 +48,21 @@ let pokemonRepository = (function() {
 
   //creates button with event listener
   function addListItem(pokemon) {
-    let pokemonList = $('.pokemon-list');
-    let listItem = $('<li></li>');
-    let button = $('<button>' + pokemon.name + '</button>');
-    button.addClass('btn', 'btn-primary');
-    button.attr('data-toggle', 'modal');
-    button.attr('data-target', '#pokemon-modal');
-    listItem.append(button);
-    pokemonList.append(listItem);
-    button.on('click', function() {
-      showDetails(pokemon);
+    pokemonRepository.loadDetails(pokemon).then(function() {
+      let pokemonList = $('.pokemon-list');
+      let listItem = $('<li></li>');
+      let button = $('<button>' + pokemon.name + '</button>');
+      let image = $('<img class="pokemon-icon" alt="button image" />');
+      image.attr('src', pokemon.imageUrl);
+      button.addClass('btn btn-primary');
+      button.attr('data-toggle', 'modal');
+      button.attr('data-target', '#pokemon-modal');
+      button.append(image);
+      listItem.append(button);
+      pokemonList.append(listItem);
+      button.on('click', function() {
+        showDetails(pokemon);
+      });
     });
   }
 
