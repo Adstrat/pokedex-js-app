@@ -68,6 +68,10 @@ let pokemonRepository = (function() {
 
   //shows pokemon details in a modal
   function showDetails(pokemon) {
+    let modalTitle = $('.modal-title');
+    let modalBody = $('.modal-body');
+    modalTitle.empty();
+    modalBody.empty();
     loadDetails(pokemon).then(function() {
       showModal(pokemon);
     });
@@ -76,9 +80,6 @@ let pokemonRepository = (function() {
   function showModal(pokemon) {
     let modalTitle = $('.modal-title');
     let modalBody = $('.modal-body');
-
-    modalTitle.empty();
-    modalBody.empty();
 
     let nameElement = $('<h1>' + pokemon.name + '</h1>');
     let imageElement = $('<img class="modal-image" style="width:50%">');
