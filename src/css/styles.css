@@ -24,7 +24,7 @@ body {
   text-transform: capitalize;
 }
 
-.pokemon-list:li {
+.pokemon-list li {
   list-style: none;
 }
 
