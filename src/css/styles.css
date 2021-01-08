@@ -22,6 +22,9 @@ body {
   width: 250px;
   text-align: left;
   text-transform: capitalize;
+}
+
+.pokemon-list:li {
   list-style: none;
 }
 
