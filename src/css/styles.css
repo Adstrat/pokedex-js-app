@@ -15,7 +15,7 @@ body {
 
 /* sets main body to start below fixed header */
 
-.instruction {
+.page-container {
   color: #0246b6;
   margin-top: 120px;
 }
