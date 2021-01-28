@@ -1,6 +1,7 @@
 body {
   text-align: center;
   background-color: #f9f25d;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
@@ -9,8 +10,21 @@ body {
   padding: 8px 40px 8px 16px;
 }
 
+.pokemon-image {
+  filter: brightness(110%);
+}
+
+.pokemon-image:hover {
+  filter: brightness(95%);
+}
+
 .main-title {
   color: #f9f25d;
+  font-family: 'Mali', cursive;
+}
+
+.main-title:hover {
+  color: #ffd012;
 }
 
 /* sets main body to start below fixed header */
@@ -22,13 +36,20 @@ body {
 
 .btn {
   background-color: #b6ccf0;
+  font-weight: bold;
   border: 2px solid #0a508b;
   padding: 16px 24px;
-  margin: 4px 0;
+  margin: 4px 4px;
   color: #0246b6;
   width: 250px;
   text-align: left;
   text-transform: capitalize;
+}
+
+.list-group {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pokemon-list li {

@@ -10,13 +10,18 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,500&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Pokédex</title>
     <link href="dist/styles.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-dark fixed-top">
-      <img src="img/pokemon.svg" alt="Pokemon Image" />
+      <img src="img/pokemon.svg" alt="Pokemon Image" class="pokemon-image" />
       <h1 class="main-title">Pokédex</h1>
       <button
         class="navbar-toggler"
@@ -45,6 +50,7 @@
     <div class="page-container">
       <h2>Explore the world of Pokémon!</h2>
       <h4>Click each button to find out more about us.</h4>
+      <br />
     </div>
     <ul class="pokemon-list list-group"></ul>
     <!-- Modal -->
