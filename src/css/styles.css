@@ -20,11 +20,14 @@ body {
 
 .main-title {
   color: #f9f25d;
-  font-family: 'Mali', cursive;
+  font-size: 34px;
+  font-family: 'Mali', sans-serif;
+  text-decoration: none;
 }
 
 .main-title:hover {
   color: #ffd012;
+  text-decoration: none;
 }
 
 /* sets main body to start below fixed header */
