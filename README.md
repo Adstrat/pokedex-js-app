@@ -4,7 +4,7 @@ This Application was built using vanilla JavaScript and some Jquery. I also used
 
 It uses an external API to display details about Pokemon.
 
-# View of Main Page
+## View of Main Page
 
 Users can click on each button to open a modal displaying more details about each Pokemon.
 
