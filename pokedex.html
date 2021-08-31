@@ -12,10 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,500&family=Montserrat:wght@400;500&display=swap"
       rel="stylesheet" />
     <title>Pokédex</title>
-    <link href="dist/styles.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="dist/styles.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="src/css/styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-dark fixed-top">
       <a href="index.html" title="return to main page" class="pokemon-image"><img src="img/pokemon.svg"
@@ -36,12 +38,16 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Heading -->
     <div class="page-container">
       <h1>- Pokédex Stats -</h1>
       <h4>Click each button to find out more about us.</h4>
       <br />
     </div>
+
     <ul class="pokemon-list list-group"></ul>
+
     <!-- Modal -->
     <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel"
       aria-hidden="true">
@@ -62,6 +68,19 @@
         </div>
       </div>
     </div>
+    <br>
+
+    <!-- Footer -->
+    <footer class="text-center footer">
+      <br>
+      <p>Copyright &copy; 2021 </p>
+      <p>Designed and developed by
+        <a href="https://adstrat.github.io/portfolio/" rel="noreferrer" target="_blank">Andrew
+          Stratton</a>
+      </p>
+      <br>
+    </footer>
+
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

@@ -90,3 +90,13 @@ span {
     margin-top: 155px;
   }
 }
+
+.footer {
+  background-color: #0a508b;
+  color: #fff;
+}
+
+.footer > p > a:hover {
+  color: #f9f25d;
+  text-decoration: none;
+}
