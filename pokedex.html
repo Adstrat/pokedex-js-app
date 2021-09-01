@@ -11,7 +11,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,500&family=Montserrat:wght@400;500&display=swap"
       rel="stylesheet" />
-    <title>Pokédex</title>
+    <title>Pokémon App</title>
     <!-- <link href="dist/styles.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="src/css/styles.css" rel="stylesheet" type="text/css" />
   </head>
@@ -19,7 +19,7 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-dark fixed-top">
+    <nav class="navbar navbar-dark fixed-top text-center">
       <a href="index.html" title="return to main page" class="pokemon-image"><img src="img/pokemon.svg"
           alt="Pokemon Image" /></a>
       <a href="pokedex.html" class="main-title">Pokémon World</a>
@@ -40,13 +40,14 @@
     </nav>
 
     <!-- Heading -->
-    <div class="page-container">
+    <div class="title-container">
       <h1>- Pokédex Stats -</h1>
       <h4>Click each button to find out more about us.</h4>
       <br />
     </div>
 
-    <ul class="pokemon-list list-group"></ul>
+    <ul class="pokemon-list list-group">
+    </ul>
 
     <!-- Modal -->
     <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel"
