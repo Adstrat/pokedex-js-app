@@ -11,14 +11,14 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,500&family=Montserrat:wght@400;500&display=swap"
       rel="stylesheet" />
-    <title>Pokédex</title>
+    <title>Pokémon App</title>
     <!-- <link href="dist/styles.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="src/css/styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-dark fixed-top">
+    <nav class="navbar navbar-dark fixed-top text-center">
       <a href="index.html" alt="Pokemon Image" class="pokemon-image" /><img src="img/pokemon.svg"></a>
       <a href="quiz.html" class="main-title">Pokémon World</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -36,22 +36,112 @@
         </ul>
       </div>
     </nav>
-    <div class="page-container">
 
-      <h2>Pokémon Quiz</h2>
 
-      <!-- Footer -->
-      <footer class="text-center footer">
-        <br>
-        <p>Copyright &copy; 2021 </p>
-        <p>Designed and developed by
-          <a href="https://adstrat.github.io/portfolio/" rel="noreferrer" target="_blank">Andrew
-            Stratton</a>
-        </p>
-        <br>
-      </footer>
+    <div class="title-container">
 
+      <h1 class="pb-4 ">Pokémon Quiz</h1>
+      <h4>Test your knowledge of Pokémon</h4>
+      <br>
     </div>
+
+    <!-- quiz section -->
+
+
+    <div class="container light-blue-background">
+      <form class="px-4 py-1">
+        <div class="my-5">
+          <p class="lead font-weight-normal">1. When was the Pokémon franchise created?</p>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="A" checked>
+            <label class="form-check-label">1985</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="B">
+            <label class="form-check-label">1995</label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="container dark-blue-background">
+      <form class="px-4 py-1">
+        <div class="my-5">
+          <p class="lead font-weight-normal">2. What is the name of the Pokémon mascot?</p>
+          <div class="form-check my-2">
+            <input type="radio" name="q2" value="A" checked>
+            <label class="form-check-label">Pikachu</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="B">
+            <label class="form-check-label">Squirtle</label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container light-blue-background">
+      <form class="px-4 py-1">
+        <div class="my-5">
+          <p class="lead font-weight-normal">3. What is the Pokémon slogan?</p>
+          <div class="form-check my-2">
+            <input type="radio" name="q3" value="A" checked>
+            <label class="form-check-label">Gotta Catch 'Em All!</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="B">
+            <label class="form-check-label">Catch 'Em When You Can!</label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container dark-blue-background">
+      <form class="px-4 py-1">
+        <div class="my-5">
+          <p class="lead font-weight-normal">4. Who is Pikachu's trainer?</p>
+          <div class="form-check my-2">
+            <input type="radio" name="q4" value="A" checked>
+            <label class="form-check-label">Professor Oak</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="B">
+            <label class="form-check-label">Ash Ketchum</label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container light-blue-background">
+      <form class="px-4 py-1">
+        <div class="my-5">
+          <p class="lead font-weight-normal">5. How is a Pokémons gender is determined?</p>
+          <div class="form-check my-2">
+            <input type="radio" name="q5" value="A" checked>
+            <label class="form-check-label">The color of its eyes</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="B">
+            <label class="form-check-label">The shape of its tail</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br>
+
+    <!-- Footer -->
+    <footer class="text-center footer">
+      <br>
+      <p>Copyright &copy; 2021 </p>
+      <p>Designed and developed by
+        <a href="https://adstrat.github.io/portfolio/" rel="noreferrer" target="_blank">Andrew
+          Stratton</a>
+      </p>
+      <br>
+    </footer>
+
+
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
