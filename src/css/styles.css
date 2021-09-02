@@ -77,14 +77,6 @@ h1 {
   margin: 12px 0 0;
 }
 
-span {
-  color: #aa0000;
-}
-
-.github-btn {
-  text-decoration: underline;
-}
-
 @media all and (max-width: 492px) {
   .title-container {
     margin-top: 175px;
