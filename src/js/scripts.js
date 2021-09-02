@@ -153,6 +153,22 @@ form.addEventListener("submit", e => {
     }
   });
   // show result on page
-  result.querySelector("span").textContent = `${score}%`;
+  scrollTo({ top: 0, behavior: 'smooth' });
+
   result.classList.remove("d-none");
+
+  let output = 0;
+
+  setTimeout(() => {
+    const timer = setInterval(() => {
+      result.querySelector("span").textContent = `${output}%`;
+      if (output === score) {
+        clearInterval(timer);
+      } else {
+        output++;
+      }
+    }, 15);
+  }, 600);
+
+
 });
