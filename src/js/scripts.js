@@ -1,19 +1,19 @@
 /* eslint-env jquery */
 
-let pokemonRepository = (function() {
+let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=500';
 
   //fetches the promise from API,
   function loadList() {
     return fetch(apiUrl)
-      .then(function(response) {
+      .then(function (response) {
         //returns parsed data
         return response.json();
         //callback for second promise, which gets the desired data
       })
-      .then(function(json) {
-        json.results.forEach(function(item) {
+      .then(function (json) {
+        json.results.forEach(function (item) {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url
@@ -21,7 +21,7 @@ let pokemonRepository = (function() {
           add(pokemon);
         });
       })
-      .catch(function(e) {
+      .catch(function (e) {
         console.error(e);
       });
   }
@@ -48,7 +48,7 @@ let pokemonRepository = (function() {
 
   //creates button with event listener
   function addListItem(pokemon) {
-    pokemonRepository.loadDetails(pokemon).then(function() {
+    pokemonRepository.loadDetails(pokemon).then(function () {
       let pokemonList = $('.pokemon-list');
       let listItem = $('<li></li>');
       let button = $('<button>' + pokemon.name + '</button>');
@@ -60,7 +60,7 @@ let pokemonRepository = (function() {
       button.append(image);
       listItem.append(button);
       pokemonList.append(listItem);
-      button.on('click', function() {
+      button.on('click', function () {
         showDetails(pokemon);
       });
     });
@@ -72,7 +72,7 @@ let pokemonRepository = (function() {
     let modalBody = $('.modal-body');
     modalTitle.empty();
     modalBody.empty();
-    loadDetails(pokemon).then(function() {
+    loadDetails(pokemon).then(function () {
       showModal(pokemon);
     });
   }
@@ -101,16 +101,16 @@ let pokemonRepository = (function() {
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(details) {
+      .then(function (details) {
         item.imageUrl = details.sprites.other.dream_world.front_default;
         item.height = details.height;
         item.weight = details.weight;
         item.types = details.types.map(item => item.type.name);
       })
-      .catch(function(e) {
+      .catch(function (e) {
         console.error(e);
       });
   }
@@ -126,9 +126,33 @@ let pokemonRepository = (function() {
 })();
 
 //updates pokemonList from API
-pokemonRepository.loadList().then(function() {
+pokemonRepository.loadList().then(function () {
   //buttons created forEach in addListItem
-  pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
+});
+
+
+// Pokemon Quiz
+
+const correctAnswers = ["B", "A", "A", "B", "B"];
+const form = document.querySelector(".quiz-form");
+const result = document.querySelector(".result");
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+
+  let score = 0;
+  const userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value, form.q5.value];
+
+  //check answers
+  userAnswers.forEach((answer, index) => {
+    if (answer === correctAnswers[index]) {
+      score += 20;
+    }
+  });
+  // show result on page
+  result.querySelector("span").textContent = `${score}%`;
+  result.classList.remove("d-none");
 });
