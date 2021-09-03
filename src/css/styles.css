@@ -85,13 +85,13 @@ h1 {
 
 @media all and (max-width: 430px) {
   .main-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
-@media all and (max-width: 330px) {
+@media all and (max-width: 360px) {
   .main-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 
@@ -120,6 +120,19 @@ h1 {
 .light-blue-background {
   background-color: #b6ccf0;
   color: #0a508b;
+}
+
+.pikachu {
+  float: right;
+  padding-top:30px;
+  height: 170px;
+}
+
+@media all and (max-width: 421px) {
+  .pikachu {
+    padding-top: 50px;
+    height: 140px;
+  }
 }
 
 .answers-button:hover {
