@@ -109,3 +109,31 @@ h1 {
   background-color: #b6ccf0;
   color: #0a508b;
 }
+
+.answers-button:hover {
+  color:#aa0000;
+  cursor: pointer;
+}
+
+.popup-wrapper {
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 15% auto;
+  padding: 20px;
+  background: white;
+  position: relative;
+}
+
+.highlight {
+  color: #aa0000;
+}

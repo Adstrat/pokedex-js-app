@@ -17,7 +17,9 @@
   </head>
 
   <body>
+
     <!-- Navbar -->
+
     <nav class="navbar navbar-dark fixed-top text-center">
       <a href="index.html" alt="Pokemon Image" class="pokemon-image" /><img src="img/pokemon.svg"></a>
       <a href="quiz.html" class="main-title">Pokémon World</a>
@@ -40,6 +42,7 @@
       </div>
     </nav>
 
+    <!-- Title -->
 
     <div class="title-container">
 
@@ -48,14 +51,15 @@
       <br>
     </div>
 
-    <!-- result section -->
+    <!-- Result section - invisible until submit is pressed -->
+
     <div class="result py-4 d-none text-center">
       <div class="container lead">
         <p>You have scored: <span class="text-primary display-4 p-3">0%</span> </p>
       </div>
     </div>
 
-    <!-- quiz section -->
+    <!-- Quiz section -->
 
     <form class="quiz-form">
 
@@ -98,7 +102,7 @@
           </div>
           <div class="form-check my-2">
             <input type="radio" name="q3" value="B">
-            <label class="form-check-label">Catch 'Em When You Can!</label>
+            <label class="form-check-label">Catch 'Em If You Can!</label>
           </div>
         </div>
       </div>
@@ -121,7 +125,7 @@
       <br>
       <div class="container light-blue-background px-4 py-1">
         <div class="my-5">
-          <p class="lead font-weight-normal">5. How is a Pokémons gender is determined?</p>
+          <p class="lead font-weight-normal">5. How is a Pikachus' gender is determined?</p>
           <div class="form-check my-2">
             <input type="radio" name="q5" value="A" checked>
             <label class="form-check-label">The color of its eyes</label>
@@ -142,8 +146,42 @@
 
     <br>
 
+    <!-- Button/Text to trigger modal -->
+
+    <div class="text-center">
+      <p class="answers-button" data-toggle="modal" data-target="#answerModal">Click here for the answers</p>
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="answerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pokémon Facts</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+          </div>
+          <div class="modal-body">
+            <p><br>
+              Pokémon is a Japanese franchise created by Santoshi Tajiri in
+              <span class=highlight>1995</span>. <br><br>
+              The original Pokémon mascot was Clefairy, but since 1997 it has been
+              <span class="highlight">Pikachu</span>. <br><br>
+              "Catch 'Em If You Can!" was considered for the slogan, but
+              <span class="highlight">"Gotta Catch 'Em All!"</span> was eventually chosen. <br><br>
+              Pikachu's trainer is called <span class="highlight">Ash Ketchum</span>. <br><br>
+              A Pikachus' gender is determined by <span class="highlight">the shape of it's tail</span>.
+              The females' tail is shaped like a heart. <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
 
     <!-- Footer -->
+
     <footer class="text-center footer">
       <br>
       <p>Copyright &copy; 2021 </p>
@@ -154,6 +192,7 @@
       <br>
     </footer>
 
+    <!-- Scripts -->
 
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
