@@ -126,12 +126,12 @@ let pokemonRepository = (function () {
 })();
 
 //updates pokemonList from API
-// pokemonRepository.loadList().then(function () {
-//buttons created forEach in addListItem
-/*  pokemonRepository.getAll().forEach(function (pokemon) {
-   pokemonRepository.addListItem(pokemon);
- });
-}); */
+pokemonRepository.loadList().then(function () {
+  //buttons created forEach in addListItem
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
+});
 
 
 // -- POKEMON QUIZ --
