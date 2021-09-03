@@ -124,14 +124,15 @@ h1 {
 
 .pikachu {
   float: right;
-  padding-top:30px;
-  height: 170px;
+  margin-top: 18px;
+  height: 165px;
+  border: 5px solid #b6ccf0;
 }
 
-@media all and (max-width: 421px) {
+@media all and (max-width: 444px) {
   .pikachu {
-    padding-top: 50px;
-    height: 140px;
+    margin-top: 50px;
+    height: 135px;
   }
 }
 
