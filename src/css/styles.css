@@ -78,8 +78,20 @@ h1 {
 }
 
 @media all and (max-width: 492px) {
-  .title-container {
-    margin-top: 175px;
+  .pokemon-image {
+    display: none;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .main-title {
+    font-size: 36px;
+  }
+}
+
+@media all and (max-width: 330px) {
+  .main-title {
+    font-size: 32px;
   }
 }
 
