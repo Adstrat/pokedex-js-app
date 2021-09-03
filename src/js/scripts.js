@@ -126,15 +126,15 @@ let pokemonRepository = (function () {
 })();
 
 //updates pokemonList from API
-pokemonRepository.loadList().then(function () {
-  //buttons created forEach in addListItem
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
-  });
-});
+// pokemonRepository.loadList().then(function () {
+//buttons created forEach in addListItem
+/*  pokemonRepository.getAll().forEach(function (pokemon) {
+   pokemonRepository.addListItem(pokemon);
+ });
+}); */
 
 
-// Pokemon Quiz
+// -- POKEMON QUIZ --
 
 const correctAnswers = ["B", "A", "A", "B", "B"];
 const form = document.querySelector(".quiz-form");
@@ -169,6 +169,5 @@ form.addEventListener("submit", e => {
       }
     }, 15);
   }, 600);
-
 
 });
