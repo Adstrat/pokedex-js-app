@@ -1,10 +1,83 @@
+:root {
+  --yellow: #f9f25d;
+  --dark-blue: #0a508b;
+  --light-blue: #b6ccf0;
+  --red: #aa0000;
+}
+
+
 body {
-  background-color: #f9f25d;
+  background-color: var(--yellow);
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Index Page */
+
+.index-title-section {
+ background-color: var(--light-blue);
+ width: 100vw;
+ height: 40vh;
+ border-bottom-right-radius: 50% 50%;
+ text-align: center;
+ color: var(--dark-blue);
+ padding: 0 40px;
+}
+
+.index-title {
+  font-family: 'Mali', sans-serif;
+  padding-top: 14vh;
+  font-size: 4em;
+}
+
+.index-title-section:hover,
+.index-title-section:focus {
+  color: var(--red);
+}
+
+.circle {
+  height: 150px;
+  width: 150px;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.pokemon-image-index {
+  filter: brightness(110%);
+  display: block;
+}
+
+.index-links {
+  color: #0246b6;
+  padding: 30px;
+}
+
+.index-links a {
+  font-size: 2em;
+}
+
+
+.index-flex {
+  display: flex;
+  margin: 40px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media all and (max-width: 562px) {
+  .index-title {
+    padding-top: 8vh;
+    font-size: 3em;
+  }
+}
+
+/* Navbar */
+
 .navbar {
-  background-color: #0a508b;
+  background-color: var(--dark-blue);
   color: #fff;
   padding: 8px 40px 8px 16px;
 }
@@ -13,18 +86,20 @@ body {
   filter: brightness(110%);
 }
 
-.pokemon-image:hover {
+.pokemon-image:hover,
+.pokemon-image:focus {
   filter: brightness(95%);
 }
 
 .main-title {
-  color: #f9f25d;
+  color: var(--yellow);
   font-size: 40px;
   font-family: 'Mali', sans-serif;
   text-decoration: none;
 }
 
-.main-title:hover {
+.main-title:hover,
+.main-title:focus {
   color: #ffd012;
   text-decoration: none;
 }
@@ -37,10 +112,12 @@ body {
   text-align: center;
 }
 
+/* --- Pokedex Stats Page --- */
+
 .btn {
-  background-color: #b6ccf0;
+  background-color: var(--light-blue);
   font-weight: bold;
-  border: 2px solid #0a508b;
+  border: 2px solid var(--dark-blue);
   padding: 16px 24px;
   margin: 4px 4px;
   color: #0246b6;
@@ -96,7 +173,7 @@ h1 {
 }
 
 .footer {
-  background-color: #0a508b;
+  background-color: var(--dark-blue);
   color: #fff;
 }
 
@@ -105,28 +182,29 @@ h1 {
 }
 
 
-.footer > p > a:hover {
-  color: #f9f25d;
+.footer > p > a:hover,
+.footer > p > a:focus {
+  color: var(--yellow);
   text-decoration: none;
 }
 
-/* quiz */
+/* --- Quiz Page --- */
 
 .dark-blue-background {
-  background-color: #0a508b;
-  color: #b6ccf0;
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
 }
 
 .light-blue-background {
   background-color: #b6ccf0;
-  color: #0a508b;
+  color: var(--dark-blue);
 }
 
 .pikachu {
   float: right;
   margin-top: 18px;
   height: 165px;
-  border: 5px solid #b6ccf0;
+  border: 5px solid var(--light-blue);
 }
 
 @media all and (max-width: 444px) {
@@ -136,8 +214,9 @@ h1 {
   }
 }
 
-.answers-button:hover {
-  color:#aa0000;
+.answers-button:hover,
+.answers-button:focus {
+  color:var(--red);
   cursor: pointer;
 }
 
@@ -161,5 +240,5 @@ h1 {
 }
 
 .highlight {
-  color: #aa0000;
+  color: var(--red);
 }
