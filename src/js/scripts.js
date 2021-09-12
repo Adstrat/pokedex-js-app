@@ -89,12 +89,17 @@ let pokemonRepository = (function () {
     let typesElement = $(
       '<p>' + 'Types: ' + pokemon.types.toString().replace(',', ', ') + '</p>'
     );
+    let abilitiesElement = $(`<p>Abilities: 
+    ${pokemon.abilities.toString().replace(',', ', ')}</p>`);
+
+
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
     modalBody.append(typesElement);
+    modalBody.append(abilitiesElement);
   }
 
   //fetches specific details of pokemon
@@ -109,6 +114,7 @@ let pokemonRepository = (function () {
         item.height = details.height;
         item.weight = details.weight;
         item.types = details.types.map(item => item.type.name);
+        item.abilities = details.abilities.map(item => item.ability.name);
       })
       .catch(function (e) {
         console.error(e);
