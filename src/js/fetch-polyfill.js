@@ -1,8 +1,9 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global.WHATWGFetch = {})));
-}(this, (function (exports) { 'use strict';
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+      (factory((global.WHATWGFetch = {})));
+}(this, (function (exports) {
+  'use strict';
 
   var support = {
     searchParams: 'URLSearchParams' in self,
@@ -10,7 +11,7 @@
     blob:
       'FileReader' in self &&
       'Blob' in self &&
-      (function() {
+      (function () {
         try {
           new Blob();
           return true
@@ -41,7 +42,7 @@
 
     var isArrayBufferView =
       ArrayBuffer.isView ||
-      function(obj) {
+      function (obj) {
         return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
       };
   }
@@ -66,14 +67,14 @@
   // Build a destructive iterator for the value list
   function iteratorFor(items) {
     var iterator = {
-      next: function() {
+      next: function () {
         var value = items.shift();
-        return {done: value === undefined, value: value}
+        return { done: value === undefined, value: value }
       }
     };
 
     if (support.iterable) {
-      iterator[Symbol.iterator] = function() {
+      iterator[Symbol.iterator] = function () {
         return iterator
       };
     }
@@ -85,45 +86,45 @@
     this.map = {};
 
     if (headers instanceof Headers) {
-      headers.forEach(function(value, name) {
+      headers.forEach(function (value, name) {
         this.append(name, value);
       }, this);
     } else if (Array.isArray(headers)) {
-      headers.forEach(function(header) {
+      headers.forEach(function (header) {
         this.append(header[0], header[1]);
       }, this);
     } else if (headers) {
-      Object.getOwnPropertyNames(headers).forEach(function(name) {
+      Object.getOwnPropertyNames(headers).forEach(function (name) {
         this.append(name, headers[name]);
       }, this);
     }
   }
 
-  Headers.prototype.append = function(name, value) {
+  Headers.prototype.append = function (name, value) {
     name = normalizeName(name);
     value = normalizeValue(value);
     var oldValue = this.map[name];
     this.map[name] = oldValue ? oldValue + ', ' + value : value;
   };
 
-  Headers.prototype['delete'] = function(name) {
+  Headers.prototype['delete'] = function (name) {
     delete this.map[normalizeName(name)];
   };
 
-  Headers.prototype.get = function(name) {
+  Headers.prototype.get = function (name) {
     name = normalizeName(name);
     return this.has(name) ? this.map[name] : null
   };
 
-  Headers.prototype.has = function(name) {
+  Headers.prototype.has = function (name) {
     return this.map.hasOwnProperty(normalizeName(name))
   };
 
-  Headers.prototype.set = function(name, value) {
+  Headers.prototype.set = function (name, value) {
     this.map[normalizeName(name)] = normalizeValue(value);
   };
 
-  Headers.prototype.forEach = function(callback, thisArg) {
+  Headers.prototype.forEach = function (callback, thisArg) {
     for (var name in this.map) {
       if (this.map.hasOwnProperty(name)) {
         callback.call(thisArg, this.map[name], name, this);
@@ -131,25 +132,25 @@
     }
   };
 
-  Headers.prototype.keys = function() {
+  Headers.prototype.keys = function () {
     var items = [];
-    this.forEach(function(value, name) {
+    this.forEach(function (value, name) {
       items.push(name);
     });
     return iteratorFor(items)
   };
 
-  Headers.prototype.values = function() {
+  Headers.prototype.values = function () {
     var items = [];
-    this.forEach(function(value) {
+    this.forEach(function (value) {
       items.push(value);
     });
     return iteratorFor(items)
   };
 
-  Headers.prototype.entries = function() {
+  Headers.prototype.entries = function () {
     var items = [];
-    this.forEach(function(value, name) {
+    this.forEach(function (value, name) {
       items.push([name, value]);
     });
     return iteratorFor(items)
@@ -167,11 +168,11 @@
   }
 
   function fileReaderReady(reader) {
-    return new Promise(function(resolve, reject) {
-      reader.onload = function() {
+    return new Promise(function (resolve, reject) {
+      reader.onload = function () {
         resolve(reader.result);
       };
-      reader.onerror = function() {
+      reader.onerror = function () {
         reject(reader.error);
       };
     })
@@ -214,7 +215,7 @@
   function Body() {
     this.bodyUsed = false;
 
-    this._initBody = function(body) {
+    this._initBody = function (body) {
       this._bodyInit = body;
       if (!body) {
         this._bodyText = '';
@@ -248,7 +249,7 @@
     };
 
     if (support.blob) {
-      this.blob = function() {
+      this.blob = function () {
         var rejected = consumed(this);
         if (rejected) {
           return rejected
@@ -265,7 +266,7 @@
         }
       };
 
-      this.arrayBuffer = function() {
+      this.arrayBuffer = function () {
         if (this._bodyArrayBuffer) {
           return consumed(this) || Promise.resolve(this._bodyArrayBuffer)
         } else {
@@ -274,7 +275,7 @@
       };
     }
 
-    this.text = function() {
+    this.text = function () {
       var rejected = consumed(this);
       if (rejected) {
         return rejected
@@ -292,12 +293,12 @@
     };
 
     if (support.formData) {
-      this.formData = function() {
+      this.formData = function () {
         return this.text().then(decode)
       };
     }
 
-    this.json = function() {
+    this.json = function () {
       return this.text().then(JSON.parse)
     };
 
@@ -351,8 +352,8 @@
     this._initBody(body);
   }
 
-  Request.prototype.clone = function() {
-    return new Request(this, {body: this._bodyInit})
+  Request.prototype.clone = function () {
+    return new Request(this, { body: this._bodyInit })
   };
 
   function decode(body) {
@@ -360,7 +361,7 @@
     body
       .trim()
       .split('&')
-      .forEach(function(bytes) {
+      .forEach(function (bytes) {
         if (bytes) {
           var split = bytes.split('=');
           var name = split.shift().replace(/\+/g, ' ');
@@ -376,7 +377,7 @@
     // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
     // https://tools.ietf.org/html/rfc7230#section-3.2
     var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
-    preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
+    preProcessedHeaders.split(/\r?\n/).forEach(function (line) {
       var parts = line.split(':');
       var key = parts.shift().trim();
       if (key) {
@@ -405,7 +406,7 @@
 
   Body.call(Response.prototype);
 
-  Response.prototype.clone = function() {
+  Response.prototype.clone = function () {
     return new Response(this._bodyInit, {
       status: this.status,
       statusText: this.statusText,
@@ -414,27 +415,27 @@
     })
   };
 
-  Response.error = function() {
-    var response = new Response(null, {status: 0, statusText: ''});
+  Response.error = function () {
+    var response = new Response(null, { status: 0, statusText: '' });
     response.type = 'error';
     return response
   };
 
   var redirectStatuses = [301, 302, 303, 307, 308];
 
-  Response.redirect = function(url, status) {
+  Response.redirect = function (url, status) {
     if (redirectStatuses.indexOf(status) === -1) {
       throw new RangeError('Invalid status code')
     }
 
-    return new Response(null, {status: status, headers: {location: url}})
+    return new Response(null, { status: status, headers: { location: url } })
   };
 
   exports.DOMException = self.DOMException;
   try {
     new exports.DOMException();
   } catch (err) {
-    exports.DOMException = function(message, name) {
+    exports.DOMException = function (message, name) {
       this.message = message;
       this.name = name;
       var error = Error(message);
@@ -445,7 +446,7 @@
   }
 
   function fetch(input, init) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       var request = new Request(input, init);
 
       if (request.signal && request.signal.aborted) {
@@ -458,7 +459,7 @@
         xhr.abort();
       }
 
-      xhr.onload = function() {
+      xhr.onload = function () {
         var options = {
           status: xhr.status,
           statusText: xhr.statusText,
@@ -469,15 +470,15 @@
         resolve(new Response(body, options));
       };
 
-      xhr.onerror = function() {
+      xhr.onerror = function () {
         reject(new TypeError('Network request failed'));
       };
 
-      xhr.ontimeout = function() {
+      xhr.ontimeout = function () {
         reject(new TypeError('Network request failed'));
       };
 
-      xhr.onabort = function() {
+      xhr.onabort = function () {
         reject(new exports.DOMException('Aborted', 'AbortError'));
       };
 
@@ -493,14 +494,14 @@
         xhr.responseType = 'blob';
       }
 
-      request.headers.forEach(function(value, name) {
+      request.headers.forEach(function (value, name) {
         xhr.setRequestHeader(name, value);
       });
 
       if (request.signal) {
         request.signal.addEventListener('abort', abortXhr);
 
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function () {
           // DONE (success or failure)
           if (xhr.readyState === 4) {
             request.signal.removeEventListener('abort', abortXhr);
