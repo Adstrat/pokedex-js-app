@@ -1,19 +1,16 @@
 /* eslint-env jquery */
 
+// POKODEX STATS PAGE - written in jQuery
+
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=500';
 
   //fetches the promise from API,
   function loadList() {
-    return fetch(apiUrl)
-      .then(function (response) {
-        //returns parsed data
-        return response.json();
-        //callback for second promise, which gets the desired data
-      })
-      .then(function (json) {
-        json.results.forEach(function (item) {
+    return $.ajax(apiUrl)
+      .then(json => {
+        json.results.forEach(item => {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url
@@ -21,7 +18,7 @@ let pokemonRepository = (function () {
           add(pokemon);
         });
       })
-      .catch(function (e) {
+      .catch(e => {
         console.error(e);
       });
   }
@@ -103,10 +100,7 @@ let pokemonRepository = (function () {
   //fetches specific details of pokemon
   function loadDetails(item) {
     let url = item.detailsUrl;
-    return fetch(url)
-      .then(function (response) {
-        return response.json();
-      })
+    return $.ajax(url)
       .then(function (details) {
         item.imageUrl = details.sprites.other.dream_world.front_default;
         item.height = details.height;
@@ -114,7 +108,7 @@ let pokemonRepository = (function () {
         item.types = details.types.map(item => item.type.name);
         item.abilities = details.abilities.map(item => item.ability.name);
       })
-      .catch(function (e) {
+      .catch(e => {
         console.error(e);
       });
   }
@@ -130,15 +124,17 @@ let pokemonRepository = (function () {
 })();
 
 //updates pokemonList from API
-pokemonRepository.loadList().then(function () {
+pokemonRepository.loadList().then(() => {
   //buttons created forEach in addListItem
-  pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.getAll().forEach(pokemon => {
     pokemonRepository.addListItem(pokemon);
   });
 });
 
 
-// -- POKEMON QUIZ --
+//------------------------------------------------
+// -- POKEMON QUIZ - written in vanilla javaScript
+//------------------------------------------------
 
 const correctAnswers = ["B", "A", "A", "B", "B"];
 const form = document.querySelector(".quiz-form");
