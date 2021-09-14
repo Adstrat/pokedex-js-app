@@ -1,13 +1,15 @@
-# Pokédex App
+# Pokémon World App
 
-This Application was built using vanilla JavaScript and some Jquery. I also used Bootstrap for the UI. 
+This App contains a Pokédex page (500 Pokémon with their stats) and a Pokémon Quiz page.
 
-It uses an external API to display details about Pokemon.
+[Link to App](https://adstrat.github.io/pokedex-js-app/)
 
-## View of Main Page
+## How the App was built
 
-Users can click on each button to open a modal displaying more details about each Pokemon.
+This Application was originally a CareerFoundry project built to create a Pokédex App. While making the App I experimented with writing the code in vanilla **javaScript** and then **jQuery**.  It makes calls from an [external API](https://pokeapi.co/) to first load the data on an array of buttons, followed by an Event Listener to open up the stats in a modal.  At first I built these components manually with vanilla javaScript, but then used **Bootstrap** to practice using this library.
+
+After I completed the CareerFoundry course I wanted to expand the App.  I decided to make a new landing page and had fun with the CSS - the pokemon spins on hover :) I also made a quiz page in javaScript to practice DOM manipulation.
+
+..I have more ideas for further interactive pages in the future (mini-games).
 
 <img src="img/Pokedex-screenshot.png" width="600">
-
-Here is a link to this [Pokédex App](https://adstrat.github.io/pokedex-js-app/)
