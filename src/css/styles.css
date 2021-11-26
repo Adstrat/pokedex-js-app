@@ -120,6 +120,10 @@ html, body {
   padding: 20px;
 }
 
+.container-game {
+  padding-top: 140px;
+}
+
 /* --- Pokedex Stats Page --- */
 
 .btn {
@@ -206,6 +210,10 @@ h1 {
 .footer,
 .push {
   height: 130px;
+}
+
+.game-wrapper {
+  margin-top: -120px;
 }
 
 @media all and (max-width: 402px) {

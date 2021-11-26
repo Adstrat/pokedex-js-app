@@ -20,54 +20,61 @@
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-dark fixed-top text-center">
-      <a href="index.html" title="return to main page" alt="Pokemon Image" class="pokemon-image" /><img
-        src="img/pokemon.svg"></a>
-      <a href="game.html" class="main-title">Pokémon World</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pokedex.html">Pokédex</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="quiz.html">Quiz</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Game<span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
+    <div class="wrapper game-wrapper">
+
+      <nav class="navbar navbar-dark fixed-top text-center">
+        <a href="index.html" title="return to main page" alt="Pokemon Image" class="pokemon-image" /><img
+          src="img/pokemon.svg"></a>
+        <a href="game.html" class="main-title">Pokémon World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pokedex.html">Pokédex</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Quiz</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Game<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <!-- Heading -->
+
+      <div class="title-container container-game">
+
+        <h1 class="pb-4 ">Poke The Pokémon</h1>
+        <h4>Hit anywhere in the game screen to start. </h4>
+        <h4>Then poke as many Pokémon as you can in 10 seconds.</h4>
+        <br>
       </div>
-    </nav>
 
-    <!-- Heading -->
-
-    <div class="title-container">
-
-      <h1 class="pb-4 ">Poke The Pokémon</h1>
-      <h4>Hit anywhere in the game screen to start. </h4>
-      <h4>Then poke as many Pokémon as you can in 10 seconds.</h4>
-      <br>
-    </div>
-
-    <div class="result py-4 d-none text-center">
-      <div class="container lead">
-        <p>Times Up!</p>
-        <p>You poked <span class="text-primary display-4 p-3">0</span> Pokémons</p>
+      <div class="result py-4 d-none text-center">
+        <div class="container lead">
+          <p>Times Up!</p>
+          <p>You poked <span class="text-primary display-4 p-3">0</span> Pokémons</p>
+        </div>
       </div>
-    </div>
 
-    <!-- Game Board -->
+      <!-- Game Board -->
 
-    <div class="game-container">
-      <img src="img/pokemon-landscape.jpg" alt="Pokemon Landscape" id="landscape">
-      <button class="try-again-button btn text-center d-none">Try Again!</button>
+      <div class="game-container">
+        <img src="img/pokemon-landscape.jpg" alt="Pokemon Landscape" id="landscape">
+        <button class="try-again-button btn text-center d-none">Try Again!</button>
+      </div>
+
+      <div class="push"></div>
     </div>
 
     <!-- Footer -->
