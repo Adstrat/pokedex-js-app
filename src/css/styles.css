@@ -280,9 +280,18 @@ h1 {
 #landscape {
   width: 100%;
   position: relative;
+  filter: grayscale(0%);
 }
 
 .pokemon-container {
   position: relative;
   width: 95%;
+}
+
+.try-again-button {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
 }

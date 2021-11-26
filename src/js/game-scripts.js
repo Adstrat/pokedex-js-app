@@ -6,6 +6,7 @@
 let landscape = document.querySelector( "#landscape" );
 let gameContainer = document.querySelector( ".game-container" );
 const result = document.querySelector( ".result" );
+let tryAgain = document.querySelector( ".try-again-button" );
 let pokes = 0;
 
 // random number generator
@@ -43,6 +44,9 @@ landscape.addEventListener( "click", () => {
   setTimeout( () => {
     document.querySelector( ".catch-pokemon" ).remove();
     result.classList.remove( "d-none" );
+    tryAgain.classList.remove( "d-none" );
+    landscape.style.filter = "grayscale(60%)";
+    landscape.style.opacity = 0.9;
     result.querySelector( "span" ).textContent = `${ pokes }`;
   }, 10000 );
   // using event delegation to remove pokemon when clicked and reveal a new one, increases pokes
@@ -55,4 +59,8 @@ landscape.addEventListener( "click", () => {
   } )
 }, {
   once: true
+} );
+
+tryAgain.addEventListener( "click", () => {
+  location.reload();
 } );
