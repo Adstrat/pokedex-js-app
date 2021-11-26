@@ -40,14 +40,23 @@ const showPokemon = ( image ) => {
 // makes one pokemon appear on first click in landscape, then function disabled (line 57)
 landscape.addEventListener( "click", () => {
   showPokemon( "img/pokemon.svg" );
-  // starts 10 second timer - removes pokemon and reveals score
+  // starts 10 second timer - removes last pokemon and reveals score
   setTimeout( () => {
     document.querySelector( ".catch-pokemon" ).remove();
     result.classList.remove( "d-none" );
     tryAgain.classList.remove( "d-none" );
     landscape.style.filter = "grayscale(60%)";
     landscape.style.opacity = 0.9;
-    result.querySelector( "span" ).textContent = `${ pokes }`;
+    // scrolls through score 
+    let output = 0;
+    const timer = setInterval( () => {
+      result.querySelector( "span" ).textContent = `${ output }`;
+      if ( output === pokes ) {
+        clearInterval( timer );
+      } else {
+        output++;
+      }
+    }, 80 );
   }, 10000 );
   // using event delegation to remove pokemon when clicked and reveal a new one, increases pokes
   gameContainer.addEventListener( "click", e => {
@@ -61,6 +70,7 @@ landscape.addEventListener( "click", () => {
   once: true
 } );
 
+// button to start new game
 tryAgain.addEventListener( "click", () => {
   location.reload();
 } );
