@@ -34,6 +34,7 @@ const getHeightDesktop = () => {
   return height;
 }
 
+// variable to target mobile screen sizes
 let mobileView = window.matchMedia( "(max-width: 480px)" );
 
 // puts the pokemon image in a ramdon place in the landscape
@@ -58,8 +59,7 @@ const showPokemon = ( image ) => {
   gameContainer.append( img );
 }
 
-
-
+// media query to target landscape images
 let landscape;
 if ( mobileView.matches ) {
   landscape = landscapeMobile;
@@ -67,15 +67,17 @@ if ( mobileView.matches ) {
   landscape = landscapeDesktop;
 }
 
-
-// DesktopView - makes one pokemon appear on first click in landscape, then function disabled
+// makes one pokemon appear on first click in landscape, then function disabled
 landscape.addEventListener( "click", () => {
   showPokemon( "img/pokemon.svg" );
   // starts 10 second timer - removes last pokemon and reveals score
   setTimeout( () => {
     document.querySelector( ".catch-pokemon" ).remove();
     result.classList.remove( "d-none" );
-    playAgain.classList.remove( "d-none" );
+    setTimeout( () => {
+      playAgain.classList.remove( "d-none" );
+    }, 2000 );
+    landscape.classList.add( "transition" );
     landscape.style.filter = "grayscale(60%)";
     landscape.style.opacity = 0.9;
     // scrolls through score 

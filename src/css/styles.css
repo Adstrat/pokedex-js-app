@@ -304,6 +304,10 @@ h1 {
   -ms-transform: translate(-50%, -50%)
 }
 
+.transition {
+  transition: 2s ease;
+}
+
 .times-up {
   color: var(--red);
   font-weight: bold;
