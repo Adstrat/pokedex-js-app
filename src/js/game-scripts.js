@@ -21,7 +21,7 @@ const getWidth = () => {
 }
 // gets the height to put the pokemon image inside
 const getHeight = () => {
-  let height = ( getWidth() - 25 ) / 2;
+  let height = ( getWidth() - 80 ) / 2;
   return height;
 }
 
