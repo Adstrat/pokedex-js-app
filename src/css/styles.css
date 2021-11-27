@@ -281,11 +281,11 @@ h1 {
 /* --- Game Page --- */
 
 .game-container {
-  margin: 20px 50px;
+  margin: 20px 3%;
   position: relative;
 }
 
-#landscape {
+.landscape {
   width: 100%;
   position: relative;
   filter: grayscale(0%);
@@ -296,7 +296,7 @@ h1 {
   width: 95%;
 }
 
-.try-again-button {
+.play-again-button {
   position: absolute;
   top: 45%;
   left: 50%;
@@ -307,4 +307,17 @@ h1 {
 .times-up {
   color: var(--red);
   font-weight: bold;
+}
+
+.landscape-desktop {
+  display: none;
+}
+
+@media all and (min-width: 480px) {
+  .landscape-mobile{
+    display: none;
+  }
+  .landscape-desktop {
+    display: block;
+  }
 }
