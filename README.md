@@ -8,4 +8,4 @@ Contents of App:
 
 [Link to App](https://adstrat.github.io/pokedex-js-app/)
 
-<img src="img/Pokedex-screenshot.png" width="600">
+<img src="img/pokemon.gif" width="600">
